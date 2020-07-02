@@ -8,6 +8,19 @@ The following are required to use this project:
 * Docker Compose
 * A PostgreSQL 12 database
 
+## Setup
+```bash
+git clone https://github.com/jonathanstaniforth/postgresql-backup.git
+
+cd postgresql-backup
+
+docker build -t postgresql-backup .
+
+docker run -v ./backups:/backups postgresql-backup
+```
+
+> Alternatively, you can pull the Docker Image and run directly, found under packages, without having to build from source.
+
 ## Details
 This image establishes a cron job that executes a bash script at a set interval.
 The interval is set to 11pm every dayby default. To change the interval, edit the file: **src/backup-cron**.
