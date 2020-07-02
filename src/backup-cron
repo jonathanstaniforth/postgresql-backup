@@ -1,0 +1,4 @@
+# Run the job every day at 11pm
+0 23 * * * root bash /backup-cron/backup.sh > /proc/1/fd/1 2>/proc/1/fd/2
+
+# Blank line for a valid cron file
